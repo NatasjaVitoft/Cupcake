@@ -58,12 +58,12 @@
             2800 Lyngby
         </div>
         <div class="col">
-            COMPANY <br>
-            <p>&copy; 2012 Olster Cupcakes</p>
+            Olster Cupcakes <br>
+            <p>&copy; 2012 Cphbusiness</p>
         </div>
         <div class="col">
-            MUMS<br/>
-            FILIBABA
+            Datamatikkeruddannelsen<br/>
+            2.semester efterår 2022
         </div>
     </div>
 
