@@ -1,0 +1,83 @@
+@startuml
+
+class AdminFacade {
+ static Admin Login (String username, String password, ConnectionPool connectionpool)
+}
+
+class Admin {
+-String username
+-String password
++ String getUsername ()
++ String setUsername ()
++ String getPassword ()
++ String setPassword ()
++ boolean equals ()
++ int hashCode ()
++ String toString ()
+}
+
+class AdminMapper {
+static Admin login(String username, String password, ConnectionPool connectionPool)
+}
+
+class User {
+-String username
+-String password
+-Int saldo
+-String email
++ String getUsername ()
++ String setUsername ()
++ String getPassword ()
++ String setPassword ()
++ Int getSaldo ()
++ Int setSaldo ()
++ String getEmail ()
++ String setEmail ()
+}
+
+class UserMapper {
+static User login(String username, String password, ConnectionPool connectionPool)
+static User createUser(String username, String password, String role, ConnectionPool connectionPool)
+}
+
+class UserFacade {
++ static User login(String username, String password, ConnectionPool connectionPool)
++ static User createUser(String username, String password, String role, ConnectionPool connectionPool)
+}
+
+class Order {
+-Int ID
+-String username
+-Timestamp date
+-Int totalprice
+-boolean checker
+
++String getUsername ()
++String setUsername ()
++Timestamp getDate ()
++Timestamp setDate ()
++Int getTotalprice ()
++Int setTotalprice ()
++Boolean getChecker ()
++Boolean setChecker ()
++Int getID ()
++Int setID ()
+}
+
+class OrderMapper {
+static Order createOrder(String username, Int totalprice, ConnectionPool connectionPool)
+static Order readOrder(Int ID, String username, Timestamp date, Int totalprice, ConnectionPool connectionPool)
+static Order deleteOrder(Int ID, String username, ConnectionPool connectionPool)
+static Order updateOrder(Int ID, String username, ConnectionPool connectionPool)
+}
+
+class OrderFacade {
+static Order createOrder(String username, Int totalprice, ConnectionPool connectionPool)
+static Order readOrder(Int ID, String username, Timestamp date, Int totalprice, ConnectionPool connectionPool)
+static Order deleteOrder(Int ID, String username, ConnectionPool connectionPool)
+static Order updateOrder(Int ID, String username, ConnectionPool connectionPool)
+}
+
+
+
+@enduml
