@@ -15,6 +15,9 @@ public class User
         this.role = role;
     }
 
+    public User(String username, String password) {
+    }
+
     public String getUsername()
     {
         return username;
