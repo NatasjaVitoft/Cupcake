@@ -6,13 +6,24 @@ public class User
 {
     private String username;
     private String password;
+    private String email;
     private String role;
+    private int saldo;
 
-    public User(String username, String password, String role)
-    {
+    public User(String username, String password, String email, String role, int saldo) {
         this.username = username;
         this.password = password;
+        this.email = email;
         this.role = role;
+        this.saldo = saldo;
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public User() {
     }
 
     public String getUsername()
@@ -35,13 +46,27 @@ public class User
         this.password = password;
     }
 
-    public String getRole()
-    {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+
+    public String getRole() {
         return role;
     }
 
-    public void setRole(String role)
-    {
+    public void setRole(String role) {
         this.role = role;
     }
 

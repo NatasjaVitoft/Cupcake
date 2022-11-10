@@ -36,7 +36,6 @@ public class OrderMapper {
             throw new DatabaseException(ex, "Could not insert order into database");
         }
         return order;
-
     }
 
     public static void readOrder(ConnectionPool connectionPool){
@@ -47,7 +46,6 @@ public class OrderMapper {
         try (Connection connection = connectionPool.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
 
-
             ResultSet resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
@@ -56,10 +54,7 @@ public class OrderMapper {
                 Timestamp date = resultSet.getTimestamp("order_date");
                 int total_price = resultSet.getInt("order_totalprice");
 
-
-
                 orderList.add(id + " : username: " + username + ", order timestamp: " + date + " , total price: " + total_price);
-
             }
 
         } catch (SQLException e) {
