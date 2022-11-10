@@ -15,7 +15,7 @@ class UserMapper
 
         User user = null;
 
-        String sql = "SELECT * FROM user WHERE username = ? AND password = ?";
+        String sql = "SELECT * FROM user WHERE user_username = ? AND user_password = ?";
 
         try (Connection connection = connectionPool.getConnection())
         {
@@ -27,6 +27,7 @@ class UserMapper
                 if (rs.next())
                 {
                     String role = rs.getString("role");
+
                     user = new User(username, password);
                 } else
                 {
