@@ -24,6 +24,7 @@
             <input type="password" id="password" name="password"/>
             <input type="submit"  value="Log in"/>
         </form>
+        <p>Ikke en bruger? tryk her: <a href="Opret.jsp"> link </a></p>
 
     </jsp:body>
 </t:pagetemplate>

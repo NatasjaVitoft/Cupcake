@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page errorPage="../error.jsp" isErrorPage="false" %>
+<%@page errorPage="error.jsp" isErrorPage="false" %>
 
 <t:pagetemplate>
     <jsp:attribute name="header">
@@ -36,13 +36,12 @@
             <button name="addToCart">Add to cart</button>
         </form>
 
-       <h2> Antal linier i kruven: ${requestScope.cartsize}</h2>
+       <h2> Antal linjer i kruven: ${requestScope.cartsize}</h2>
 
-        <h2>Indhold i kruv:</h2>
+        <h2>Indhold i kurv:</h2>
         <c:forEach var="item" items="${sessionScope.cart.cupcakeList}">
             TopId: ${item.topId} BottomId ${item.bottomId} Antal: ${item.quantity}<br/>
         </c:forEach>
-
     </jsp:body>
 
 </t:pagetemplate>
