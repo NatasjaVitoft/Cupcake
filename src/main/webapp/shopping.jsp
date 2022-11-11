@@ -36,12 +36,16 @@
             <button name="addToCart">Add to cart</button>
         </form>
 
-       <h2> Antal linjer i kruven: ${requestScope.cartsize}</h2>
+       <h2> Antal linjer i kurven: ${requestScope.cartsize}</h2>
 
         <h2>Indhold i kurv:</h2>
         <c:forEach var="item" items="${sessionScope.cart.cupcakeList}">
-            TopId: ${item.topId} BottomId ${item.bottomId} Antal: ${item.quantity}<br/>
+            Top: ${item.top.name} Bund: ${item.bottom.name} Antal: ${item.quantity}
+            Price: ${item.top.price + item.bottom.price}<br>
         </c:forEach>
+        <br>
+        Total Price: ${sessionScope.cart.getTotalPriceOfCupcakes()}
+
     </jsp:body>
 
 </t:pagetemplate>
