@@ -38,6 +38,9 @@
                     <c:if test="${sessionScope.user != null }">
                         <a class="nav-item nav-link" href="${pageContext.request.contextPath}/logout">Log out</a>
                     </c:if>
+                    <c:if test="${sessionScope.user.email != null }">
+                        <a class="nav-item nav-link" href="#"> ${sessionScope.user.email}</a>
+                    </c:if>
                 </div>
             </div>
         </div>

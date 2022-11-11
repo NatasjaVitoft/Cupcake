@@ -1,10 +1,7 @@
 package dat.backend.control;
 
 import dat.backend.model.config.ApplicationStart;
-import dat.backend.model.entities.Bottom;
-import dat.backend.model.entities.Cupcake;
-import dat.backend.model.entities.ShoppingCart;
-import dat.backend.model.entities.Top;
+import dat.backend.model.entities.*;
 import dat.backend.model.persistence.ConnectionPool;
 import dat.backend.model.persistence.CupcakeFacade;
 

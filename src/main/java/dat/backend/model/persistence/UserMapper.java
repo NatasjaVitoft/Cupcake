@@ -26,7 +26,8 @@ class UserMapper
                 ResultSet rs = ps.executeQuery();
                 if (rs.next())
                 {
-                    user = new User(username, password);
+                    String email = rs.getString("user_email");
+                    user = new User(username, password, email);
 
                 } else
                 {

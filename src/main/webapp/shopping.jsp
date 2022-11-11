@@ -46,6 +46,7 @@
         <br>
         Total Price: ${sessionScope.cart.getTotalPriceOfCupcakes()}
 
+
     </jsp:body>
 
 </t:pagetemplate>

@@ -26,6 +26,12 @@ public class User
     public User() {
     }
 
+    public User(String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
+
     public String getUsername()
     {
         return username;
@@ -83,7 +89,7 @@ public class User
     @Override
     public int hashCode()
     {
-        return Objects.hash(getUsername(), getPassword(), getRole());
+        return Objects.hash(getUsername(), getPassword(), getRole(), getEmail());
     }
 
     @Override
@@ -93,6 +99,7 @@ public class User
                 "brugerNavn='" + username + '\'' +
                 ", kodeord='" + password + '\'' +
                 ", rolle='" + role + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
