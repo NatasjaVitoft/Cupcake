@@ -19,7 +19,7 @@
         <form action="Opret" method="post">
             <div class="container">
                 <h1>Opret</h1>
-                <p>Please fill in this form to create an account.</p>
+                <p>Udfyld felterne:</p>
                 <hr>
 
                 <label for="username"><b>Username</b></label>
@@ -38,12 +38,14 @@
                 <input type="text" placeholder="Enter saldo" name="saldo" id="saldo" required>
 
                 <hr>
-                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-                <button type="submit" class="registerbtn">Register</button>
+
+                <button type="submit" class="registerbtn">Opret</button>
+
             </div>
 
             <div class="container signin">
-                <p>Already have an account? <a href="login.jsp">Sign in</a>.</p>
+                <br>
+                <p>Har du allerede en bruger? <a href="login.jsp">login her</a>.</p>
             </div>
         </form>
 

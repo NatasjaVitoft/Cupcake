@@ -18,7 +18,7 @@ public class AdminMapper {
 
         Admin admin = null;
 
-        String sql = "SELECT * FROM admin WHERE username = ? AND password = ?";
+        String sql = "SELECT * FROM admin WHERE admin_username = ? AND admin_password = ?";
 
         try (Connection connection = connectionPool.getConnection())
         {

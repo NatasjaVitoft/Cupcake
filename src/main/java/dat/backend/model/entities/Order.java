@@ -27,6 +27,14 @@ public class Order {
         this.total_price = total_price;
     }
 
+    public Order(int total_price) {
+        this.total_price = total_price;
+    }
+
+    public Order() {
+
+    }
+
     public int getId() {
         return id;
     }

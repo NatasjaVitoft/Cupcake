@@ -1,12 +1,11 @@
 package dat.backend.control;
 
 import dat.backend.model.config.ApplicationStart;
-import dat.backend.model.entities.Bottom;
-import dat.backend.model.entities.Cupcake;
-import dat.backend.model.entities.ShoppingCart;
-import dat.backend.model.entities.Top;
+import dat.backend.model.entities.*;
+import dat.backend.model.exceptions.DatabaseException;
 import dat.backend.model.persistence.ConnectionPool;
 import dat.backend.model.persistence.CupcakeFacade;
+import dat.backend.model.persistence.OrderFacade;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,8 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @WebServlet(name = "AddToCart", value = "/addtocart")
 public class AddToCart extends HttpServlet {
@@ -35,7 +33,6 @@ public class AddToCart extends HttpServlet {
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
 
 
-
         int topId = Integer.parseInt(request.getParameter("top"));
         int bottomId = Integer.parseInt(request.getParameter("bottom"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
@@ -52,13 +49,17 @@ public class AddToCart extends HttpServlet {
             totalPrice += cupcake.getBottom().getPrice() + cupcake.getTop().getPrice();
             System.out.println(totalPrice);
         }
+
         cart.setTotalPriceOfCupcakes(totalPrice);
         System.out.println(cart.getTotalPriceOfCupcakes());
 
         cart.add(cupcake);
         System.out.println(cart.getCupcakeList());
+
         session.setAttribute("cart", cart);
         request.setAttribute("cartsize", cart.getNumberOfCupcakes());
+
+        String username = (String) session.getAttribute("username");
 
         request.getRequestDispatcher("shopping.jsp").forward(request, response);
     }

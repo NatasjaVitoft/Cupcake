@@ -1,7 +1,5 @@
 package dat.backend.model.entities;
 
-
-
 public class Cupcake {
     private Top top;
     private Bottom bottom;

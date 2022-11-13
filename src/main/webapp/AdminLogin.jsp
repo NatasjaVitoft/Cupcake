@@ -17,7 +17,7 @@
 
         <h3>You can log in here</h3> <br>
 
-        <form action="login" method="post">
+        <form action="AdminLogin" method="post">
             <label for="username">Username: </label>
             <input type="text" id="username" name="username"/>
             <label for="password">Password: </label>
@@ -25,8 +25,6 @@
             <input type="submit"  value="Log in"/>
         </form>
         <br>
-        <p>Ikke en bruger? tryk her: <a href="Opret.jsp"> link </a></p>
-        <p>Vil du logge ind som admin? tryk her: <a href="AdminLogin.jsp"> link </a></p>
 
     </jsp:body>
 </t:pagetemplate>
