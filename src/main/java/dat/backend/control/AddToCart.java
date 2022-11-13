@@ -2,7 +2,6 @@ package dat.backend.control;
 
 import dat.backend.model.config.ApplicationStart;
 import dat.backend.model.entities.*;
-import dat.backend.model.exceptions.DatabaseException;
 import dat.backend.model.persistence.ConnectionPool;
 import dat.backend.model.persistence.CupcakeFacade;
 import dat.backend.model.persistence.OrderFacade;
@@ -58,8 +57,8 @@ public class AddToCart extends HttpServlet {
 
         session.setAttribute("cart", cart);
         request.setAttribute("cartsize", cart.getNumberOfCupcakes());
+        session.setAttribute("price", cart.getTotalPriceOfCupcakes());
 
-        String username = (String) session.getAttribute("username");
 
         request.getRequestDispatcher("shopping.jsp").forward(request, response);
     }

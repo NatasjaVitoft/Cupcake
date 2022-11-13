@@ -8,7 +8,6 @@ public class Order {
     private String username;
     private Timestamp date;
     private int total_price;
-    private boolean checker;
 
     public Order(int id, String username, Timestamp date, int total_price) {
         this.id = id;
@@ -24,10 +23,6 @@ public class Order {
 
     public Order(String username, int total_price) {
         this.username = username;
-        this.total_price = total_price;
-    }
-
-    public Order(int total_price) {
         this.total_price = total_price;
     }
 
@@ -65,14 +60,6 @@ public class Order {
 
     public void setTotal_price(int total_price) {
         this.total_price = total_price;
-    }
-
-    public boolean isChecker() {
-        return checker;
-    }
-
-    public void setChecker(boolean checker) {
-        this.checker = checker;
     }
 
     @Override

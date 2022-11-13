@@ -47,6 +47,7 @@ public class Login extends HttpServlet
             session.setAttribute("user", user); // adding user object to session scope
             ShoppingCart cart = new ShoppingCart();
             session.setAttribute("cart", cart);
+            session.setAttribute("username", username);
             request.getRequestDispatcher("WEB-INF/welcome.jsp").forward(request, response);
         }
         catch (DatabaseException e)
