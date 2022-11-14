@@ -2,9 +2,8 @@ package dat.backend.control;
 
 import dat.backend.model.config.ApplicationStart;
 import dat.backend.model.entities.*;
-import dat.backend.model.persistence.ConnectionPool;
-import dat.backend.model.persistence.CupcakeFacade;
-import dat.backend.model.persistence.OrderFacade;
+import dat.backend.model.exceptions.DatabaseException;
+import dat.backend.model.persistence.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,6 +40,13 @@ public class AddToCart extends HttpServlet {
         Bottom bottom = CupcakeFacade.getBottomById(bottomId, connectionPool);
 
         Cupcake cupcake = new Cupcake(top, bottom, quantity);
+
+        try {
+            OrderlineFacade.create(topId, bottomId, quantity, connectionPool);
+        } catch (DatabaseException e) {
+            e.printStackTrace();
+            System.out.println("IT DIDNT WORK");
+        }
 
         int totalPrice = 0;
 

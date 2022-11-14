@@ -11,20 +11,22 @@ import java.util.logging.Logger;
 
 public class OrderMapper {
 
-    public static Order createOrder(String username, int total_price, ConnectionPool connectionPool) throws DatabaseException {
+    public static Order createOrder(String username, Timestamp date, int total_price, ConnectionPool connectionPool ) throws DatabaseException {
         Logger.getLogger("web").log(Level.INFO, "");
         Order order;
-        String sql = "insert into order (order_username, order_totalprice) values (?,?)";
+        String sql = "insert into order (order_username, order_date, order_totalprice) values (?,?,?)";
         try (Connection connection = connectionPool.getConnection())
         {
             try (PreparedStatement ps = connection.prepareStatement(sql))
             {
                 ps.setString(1, username);
-                ps.setInt(2, total_price);
+                ps.setTimestamp(2, date);
+                ps.setInt(3, total_price);
+
                 int rowsAffected = ps.executeUpdate();
                 if (rowsAffected == 1)
                 {
-                    order = new Order(username, total_price);
+                    order = new Order(username, date, total_price);
                 } else
                 {
                     throw new DatabaseException("Could not insert order into database");

@@ -9,25 +9,13 @@ public class Order {
     private Timestamp date;
     private int total_price;
 
-    public Order(int id, String username, Timestamp date, int total_price) {
-        this.id = id;
+    public Order(String username, Timestamp date, int total_price) {
         this.username = username;
+        this.total_price = total_price;
         this.date = date;
-        this.total_price = total_price;
-    }
-
-    public Order(int id, String username) {
-        this.id = id;
-        this.username = username;
-    }
-
-    public Order(String username, int total_price) {
-        this.username = username;
-        this.total_price = total_price;
     }
 
     public Order() {
-
     }
 
     public int getId() {
