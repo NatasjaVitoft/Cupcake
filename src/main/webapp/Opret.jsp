@@ -7,46 +7,73 @@
 <t:pagetemplate>
 
     <jsp:attribute name="header">
-
+        Opret
     </jsp:attribute>
 
     <jsp:attribute name="footer">
-
+        Opret<br>
     </jsp:attribute>
 
     <jsp:body>
 
-        <form action="Opret" method="post">
-            <div class="container">
-                <h1>Opret</h1>
-                <p>Udfyld felterne:</p>
-                <hr>
+        <br>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-lg-auto">
+                    <form action="Opret" method="post">
+                        <p>Udfyld felterne:</p>
+                        <hr>
 
-                <label for="username"><b>Username</b></label>
-                <input type="username" placeholder="Enter username" name="username" id="username" required>
+                        <div class="row">
+                            <div class="col-lg-auto">
+                                <label for="username"><b>Username</b></label>
+                                <input type="username" placeholder="Enter username" name="username" id="username"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-auto">
+                                <label for="password"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="password" id="password"
+                                       required>
+                            </div>
+                        </div>
 
-                <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" id="password" required>
+                        <div class="row">
+                            <div class="col-lg-auto">
+                                <label for="email"><b>Email</b></label>
+                                <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                            </div>
+                        </div>
 
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                        <div class="row">
+                            <div class="col-lg-auto">
+                                <label for="role"><b>Role</b></label>
+                                <input type="text" placeholder="Enter role" name="role" id="role" required>
+                            </div>
+                        </div>
 
-                <label for="role"><b>Role</b></label>
-                <input type="text" placeholder="Enter role" name="role" id="role" required>
+                        <div class="row">
+                            <div class="col-lg-auto">
+                                <label for="saldo"><b>Saldo</b></label>
+                                <input type="text" placeholder="Enter saldo" name="saldo" id="saldo" required>
+                            </div>
+                        </div>
 
-                <label for="saldo"><b>Saldo</b></label>
-                <input type="text" placeholder="Enter saldo" name="saldo" id="saldo" required>
+                        <hr>
 
-                <hr>
+                        <button type="submit" class="registerbtn">Opret</button>
 
-                <button type="submit" class="registerbtn">Opret</button>
 
+                    </form>
+                </div>
             </div>
+        </div>
 
-            <div class="container signin">
-                <br>
-                <p>Har du allerede en bruger? <a href="login.jsp">login her</a>.</p>
-            </div>
+        <div class="container signin">
+            <br>
+            <p>Har du allerede en bruger? <a href="login.jsp">login her</a>.</p>
+        </div>
         </form>
 
     </jsp:body>

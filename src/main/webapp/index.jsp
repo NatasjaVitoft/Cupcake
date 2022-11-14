@@ -13,9 +13,12 @@
     </jsp:attribute>
 
     <jsp:body>
+        <br>
+        <div style="text-align: center">
         <p>Log venglist på systemet først</p>
         <p>Derefter kan du shoppe løs</p>
         <p>Det kan du gøre her: <a href="login.jsp">link</a></p>
+        </div>
 
     </jsp:body>
 

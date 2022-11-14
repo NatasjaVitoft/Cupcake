@@ -15,16 +15,25 @@
 
     <jsp:body>
 
-        <h3>You can log in here</h3> <br>
-
-        <form action="AdminLogin" method="post">
-            <label for="username">Username: </label>
-            <input type="text" id="username" name="username"/>
-            <label for="password">Password: </label>
-            <input type="password" id="password" name="password"/>
-            <input type="submit"  value="Log in"/>
-        </form>
         <br>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-lg-auto">
+                    <h3>You can log in here</h3> <br>
+
+                    <form action="AdminLogin" method="post">
+                        <label for="username">Username: </label>
+                        <input type="text" id="username" name="username"/>
+                        <label for="password">Password: </label>
+                        <input type="password" id="password" name="password"/>
+                        <input type="submit"  value="Log in"/>
+                    </form>
+
+                    <br>
+                    <p>Vil du logge ind som bruger? Tryk <a href="login.jsp"> her </a></p>
+                </div>
+            </div>
+        </div>
 
     </jsp:body>
 </t:pagetemplate>
