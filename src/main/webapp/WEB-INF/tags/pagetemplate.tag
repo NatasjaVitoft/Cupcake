@@ -33,9 +33,11 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Forside</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/WEB-INF/welcome.jsp">Forside</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Priser</a>
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Bestil</a>
+                    <c:if test="${sessionScope.user != null }">
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/shopping.jsp">Kurv</a>
+                    </c:if>
                     <c:if test="${sessionScope.user == null }">
                         <a class="nav-item nav-link" href="${pageContext.request.contextPath}/login.jsp">Login</a>
                     </c:if>

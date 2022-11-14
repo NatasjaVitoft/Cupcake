@@ -56,7 +56,7 @@
             Price: ${item.top.price + item.bottom.price}<br>
         </c:forEach>
         <br>
-lopi
+
         Number of cupcakes: ${sessionScope.cart.numberOfCupcakes} <br>
         Total Price: ${sessionScope.cart.getTotalPriceOfCupcakes()}
 
