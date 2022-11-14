@@ -1,6 +1,8 @@
 package dat.backend.model.persistence;
 
+import dat.backend.model.config.ApplicationStart;
 import dat.backend.model.entities.Order;
+import dat.backend.model.entities.Orderline;
 import dat.backend.model.exceptions.DatabaseException;
 
 import java.sql.*;
@@ -11,10 +13,17 @@ import java.util.logging.Logger;
 
 public class OrderMapper {
 
+    ConnectionPool connectionPool;
+
+    public OrderMapper(ConnectionPool connectionPool) {
+        this.connectionPool = ApplicationStart.getConnectionPool();
+    }
+
     public static Order createOrder(String username, int total_price, ConnectionPool connectionPool ) throws DatabaseException {
         Logger.getLogger("web").log(Level.INFO, "");
         Order order;
-        String sql = "insert into order (order_username, order_totalprice) values (?,?)";
+        String sql = "insert into orders (order_username, order_totalprice) values (?,?)";
+
         try (Connection connection = connectionPool.getConnection())
         {
             try (PreparedStatement ps = connection.prepareStatement(sql))

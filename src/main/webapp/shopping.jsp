@@ -60,8 +60,9 @@ lopi
         Number of cupcakes: ${sessionScope.cart.numberOfCupcakes} <br>
         Total Price: ${sessionScope.cart.getTotalPriceOfCupcakes()}
 
-        <form action="AddOrder" method="post">
-            <button name="addorder"> Bestil </button>
+        <form action="addorder" method="post">
+            <button name="addorder"> Betal</button>
+
         </form>
 
 
