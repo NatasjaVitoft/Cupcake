@@ -9,7 +9,7 @@ public class Order {
     private Timestamp date;
     private int total_price;
 
-    public Order(String username, Timestamp date, int total_price) {
+    public Order(String username, int total_price) {
         this.username = username;
         this.total_price = total_price;
         this.date = date;

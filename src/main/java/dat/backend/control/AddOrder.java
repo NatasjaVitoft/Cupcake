@@ -10,13 +10,11 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.sql.Timestamp;
 
 @WebServlet(name = "AddOrder", value = "/AddOrder")
 public class AddOrder extends HttpServlet {
 
     ConnectionPool connectionPool;
-    OrderFacade orderFacade;
 
     @Override
     public void init() throws ServletException {
@@ -34,16 +32,14 @@ public class AddOrder extends HttpServlet {
 
         String username = (String) session.getAttribute("username");
         int price = (int) session.getAttribute("price");
-        Timestamp date = new Timestamp(System.currentTimeMillis());
 
         Order order = new Order();
 
         order.setUsername(username);
         order.setTotal_price(price);
-        order.setDate(date);
 
         try {
-            OrderFacade.createOrder(username, date, price, connectionPool);
+            OrderFacade.createOrder(username, price, connectionPool);
             session = request.getSession();
             session.setAttribute("order", order); // adding user object to session scope
             request.getRequestDispatcher("WEB-INF/welcome.jsp").forward(request, response);

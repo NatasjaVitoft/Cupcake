@@ -7,8 +7,8 @@ import java.sql.Timestamp;
 
 public class OrderFacade {
 
-    public static Order createOrder(String username, Timestamp date, int total_price, ConnectionPool connectionPool) throws DatabaseException {
-        return OrderMapper.createOrder(username, date, total_price, connectionPool);
+    public static Order createOrder(String username, int total_price, ConnectionPool connectionPool) throws DatabaseException {
+        return OrderMapper.createOrder(username, total_price, connectionPool);
     }
 
     public static void readOrder(ConnectionPool connectionPool) throws DatabaseException{
