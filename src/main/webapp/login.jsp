@@ -18,20 +18,26 @@
 
         <br>
         <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col-lg-auto">
-                    <h3>You can log in here</h3> <br>
+        <div class="row justify-content-md-center">
+        <div class="col-lg-auto">
+            <h3>You can log in here</h3> <br>
 
+
+            <div class="row">
+                <div class="col-lg-auto">
                     <form action="login" method="post">
                         <label for="username">Username: </label>
                         <input type="text" id="username" name="username"/>
                         <label for="password">Password: </label>
                         <input type="password" id="password" name="password"/>
-                        <input type="submit" value="Log in"/>
+                        <input style="background-color: black; color: whitesmoke" type="submit" value="Log in"/>
                     </form>
+                    <a href="Opret.jsp">
+                        <button style="background-color: #3c1463; color: whitesmoke; border-color: #3c1463">Opret
+                        </button>
+                    </a>
 
                     <br>
-                    <p>Ikke en bruger? Tryk <a href="Opret.jsp"> her </a></p>
                     <p>Vil du logge ind som admin? Tryk <a href="AdminLogin.jsp"> her </a></p>
                 </div>
             </div>
