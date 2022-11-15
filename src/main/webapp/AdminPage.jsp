@@ -24,9 +24,16 @@
             <input type="submit" value="Opdater saldo"/>
         </form>
 
+        <br>
         <form action="AdminPage" method="get">
-            <input type="submit" value="Log in"/>
+            <input type="submit" value="Se Orderliste"/>
         </form>
+
+        <br>
+
+        <div style="width: 555px">
+                ${sessionScope.orderlist}
+        </div>
 
     </jsp:body>
 </t:pagetemplate>

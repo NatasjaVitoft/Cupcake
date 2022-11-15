@@ -5,6 +5,8 @@ import dat.backend.model.entities.Order;
 import dat.backend.model.entities.Orderline;
 import dat.backend.model.exceptions.DatabaseException;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,8 +50,9 @@ public class OrderMapper {
         return order;
     }
 
-    public static void readOrder(ConnectionPool connectionPool){
+    public static void readOrder(HttpServletRequest request, ConnectionPool connectionPool){
         List<String> orderList = new ArrayList<>();
+        HttpSession session = request.getSession();
 
         String sql = "select * from orders ";
 
@@ -64,18 +67,15 @@ public class OrderMapper {
                 Timestamp date = resultSet.getTimestamp("order_date");
                 int total_price = resultSet.getInt("order_totalprice");
 
-                orderList.add(id + " : username: " + username + ", order timestamp: " + date + " , total price: " + total_price);
+                orderList.add(id + " : username: " + username + ", order timestamp: " + date + " , total price: " + total_price + "\n");
             }
+            session.setAttribute("orderlist", orderList);
 
         } catch (SQLException e) {
 
             e.printStackTrace();
         }
-        for (String s : orderList) {
 
-            System.out.println(s);
-
-        }
     }
 
     /*public static Order deleteOrder(int id, String username, ConnectionPool connectionPool){

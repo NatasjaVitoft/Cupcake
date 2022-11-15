@@ -16,7 +16,8 @@ form {
     align-content: center;
 }
 
-.container{
+.container1{
+    justify-items: right;
 
 }
 

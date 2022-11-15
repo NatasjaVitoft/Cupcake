@@ -30,7 +30,7 @@ public class AdminPage extends HttpServlet {
         HttpSession session = request.getSession();
 
         try {
-            OrderFacade.readOrder(connectionPool);
+            OrderFacade.readOrder(request, connectionPool);
             request.getRequestDispatcher("AdminPage.jsp").forward(request, response);
         } catch (DatabaseException e) {
             e.printStackTrace();
