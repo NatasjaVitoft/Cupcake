@@ -50,7 +50,7 @@ public class Login extends HttpServlet
             ShoppingCart cart = new ShoppingCart();
             session.setAttribute("cart", cart);
             session.setAttribute("username", username);
-            request.getRequestDispatcher("WEB-INF/welcome.jsp").forward(request, response);
+            request.getRequestDispatcher("welcome.jsp").forward(request, response);
         }
         catch (DatabaseException e)
         {

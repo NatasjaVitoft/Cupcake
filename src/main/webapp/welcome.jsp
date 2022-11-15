@@ -35,7 +35,11 @@
                         Vestibulum euismod sapien sed varius vehicula. Proin tristique placerat mi, vitae congue ante
                         accumsan ut.</p>
 
-                    <p>shop her: <a href="shopping.jsp">link</a></p>
+                    <c:if test="${sessionScope.user != null }">
+                    <a href="shopping.jsp">
+                        <button style="background-color: #3c1463; color: whitesmoke; border-color: #3c1463">Shop</button>
+                    </a>
+                    </c:if>
 
                 </div>
             </div>

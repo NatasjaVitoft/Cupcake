@@ -20,37 +20,45 @@
 </head>
 <body>
 <header>
-    <div style="justify-content: center; display: flex">
-        <a class="navbar-brand" href="index.jsp">
-            <img src="${pageContext.request.contextPath}/images/olskercupcakes.png" width="800px;" class="img-fluid"/>
-        </a>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/welcome.jsp">Forside</a>
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/price.jsp">Priser</a>
-                    <c:if test="${sessionScope.user != null }">
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/shopping.jsp">Kurv</a>
-                    </c:if>
-                    <c:if test="${sessionScope.user == null }">
-                        <a class="nav-item nav-link" href="${pageContext.request.contextPath}/login.jsp">Login</a>
-                    </c:if>
-                    <c:if test="${sessionScope.user != null }">
-                        <a class="nav-item nav-link" href="${pageContext.request.contextPath}/logout">Log out</a>
-                    </c:if>
-                    <c:if test="${sessionScope.user.email != null }">
-                        <a class="nav-item nav-link" href="#"> ${sessionScope.user.email}</a>
-                    </c:if>
+    <div class="container">
+        <div style="justify-content: center; display: flex; background-color: #3c1463;">
+            <a class="navbar-brand" href="welcome.jsp">
+                <img src="${pageContext.request.contextPath}/images/olskercupcakes.png" width="1000px;"
+                     class="img-fluid"/>
+            </a>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-secondary bg-light">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link"
+                           href="${pageContext.request.contextPath}/welcome.jsp">Forside</a>
+                        <a class="nav-item nav-link" href="${pageContext.request.contextPath}/price.jsp">Priser</a>
+                        <c:if test="${sessionScope.user != null }">
+                            <a class="nav-item nav-link"
+                               href="${pageContext.request.contextPath}/shopping.jsp">Kurv</a>
+                        </c:if>
+                        <c:if test="${sessionScope.user == null }">
+                            <a class="nav-item nav-link"
+                               href="${pageContext.request.contextPath}/login.jsp">Login</a>
+                        </c:if>
+                        <c:if test="${sessionScope.user != null }">
+                            <a class="nav-item nav-link" href="${pageContext.request.contextPath}/logout">Log
+                                out</a>
+                        </c:if>
+                        <c:if test="${sessionScope.user.email != null }">
+                            <a class="nav-item nav-link" href="#"> ${sessionScope.user.email}</a>
+                        </c:if>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 </header>
 
 <div id="body" class="container mt-4" style="min-height: 400px;">

@@ -75,7 +75,7 @@
                         <br>
                         <div class="row">
                             <div class="col-lg-auto">
-                                <button type="submit" class="registerbtn">Opret</button>
+                                <button style="background-color: black; color: whitesmoke" type="submit" class="registerbtn">Opret</button>
                             </div>
                         </div>
 
