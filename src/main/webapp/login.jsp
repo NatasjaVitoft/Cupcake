@@ -30,12 +30,10 @@
                                 <input type="text" id="username" name="username"/>
                                 <label for="password">Password: </label>
                                 <input type="password" id="password" name="password"/>
-                                <input style="background-color: black; color: whitesmoke" type="submit" value="Log in"/>
+                                <input style="background-color: #3c1463; border: none; color: whitesmoke"  type="submit" value="Log in"/>
                             </form>
 
-                            <a href="Opret.jsp">
-                                <button style="background-color: #3c1463; color: whitesmoke; border-color: #3c1463">Opret</button>
-                            </a>
+                            <p> <br> Vil du oprette en bruger? Tryk <a href="Opret.jsp"> her </a></p>
 
                         </div>
                     </div>

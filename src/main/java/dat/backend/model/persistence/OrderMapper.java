@@ -51,7 +51,8 @@ public class OrderMapper {
     }
 
     public static void readOrder(HttpServletRequest request, ConnectionPool connectionPool){
-        List<String> orderList = new ArrayList<>();
+        List<Order> orderList = new ArrayList<>();
+
         HttpSession session = request.getSession();
 
         String sql = "select * from orders ";
@@ -67,7 +68,8 @@ public class OrderMapper {
                 Timestamp date = resultSet.getTimestamp("order_date");
                 int total_price = resultSet.getInt("order_totalprice");
 
-                orderList.add(id + " : username: " + username + ", order timestamp: " + date + " , total price: " + total_price + "\n");
+                Order order = new Order(id, username, date, total_price);
+                orderList.add(order);
             }
             session.setAttribute("orderlist", orderList);
 
@@ -78,44 +80,7 @@ public class OrderMapper {
 
     }
 
-    /*public static Order deleteOrder(int id, String username, ConnectionPool connectionPool){
-
-        //skal en metode til at printe liste som vi sletter fra
-
-        String sql = "delete from order where order_id = ?";
-
-        try (Connection connection = connectionPool.getConnection();
-             PreparedStatement ps = connection.prepareStatement(sql);) {
-
-            String bookName = getString("Skriv navnet på bogen der skal slettes ");
-
-            ps.setString(1, bookName);
-
-
-            int res = ps.executeUpdate();
-
-            if (res > 0) {
-
-                System.out.println("Bogen med navnet " + "\"" + bookName + "\"" + " er nu blevet slettet");
-            } else {
-
-                System.out.println("Bogen med navnet " + "\"" + bookName + "\"" + " fandtes ikke i listen");
-
-            }
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        //printer listen igen , så vi kan se at elementet er slettet fra listen.
-        return order;
-    }*/
-
-
-    public static Order updateOrder(int id, String username, ConnectionPool connectionPool){
+    public static Order updateOrder(int id, String username, ConnectionPool connectionPool) {
         return null;
     }
-
-
 }

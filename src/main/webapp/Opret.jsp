@@ -17,17 +17,18 @@
     <jsp:body>
 
         <br>
+
         <div class="container">
             <div class="row justify-content-md-center">
-                <div class="col-lg-auto">
+                <div class="col-lg-2">
                     <form action="Opret" method="post">
-                        <h1>Opret</h1> <br>
+                        <h1>Opret</h1>
                         <h4>Udfyld felterne:</h4>
                         <br>
 
                         <div class="row">
                             <div class="col-lg-auto">
-                                <label for="username"><b></b></label>
+                                <label for="username"></label>
                                 <input type="username" placeholder="Enter username" name="username" id="username"
                                        required>
                             </div>
@@ -37,7 +38,7 @@
 
                         <div class="row">
                             <div class="col-lg-auto">
-                                <label for="password"><b></b></label>
+                                <label for="password"></label>
                                 <input type="password" placeholder="Enter Password" name="password" id="password"
                                        required>
                             </div>
@@ -47,7 +48,7 @@
 
                         <div class="row">
                             <div class="col-lg-auto">
-                                <label for="email"><b></b></label>
+                                <label for="email"></label>
                                 <input type="text" placeholder="Enter Email" name="email" id="email" required>
                             </div>
                         </div>
@@ -57,7 +58,7 @@
 
                         <div class="row">
                             <div class="col-lg-auto">
-                                <label for="role"><b></b></label>
+                                <label for="role"></label>
                                 <input type="text" placeholder="Enter role" name="role" id="role" required>
                             </div>
                         </div>
@@ -66,7 +67,7 @@
 
                         <div class="row">
                             <div class="col-lg-auto">
-                                <label for="saldo"><b></b></label>
+                                <label for="saldo"></label>
                                 <input type="text" placeholder="Enter saldo" name="saldo" id="saldo" required>
                             </div>
                         </div>
@@ -81,18 +82,17 @@
 
 
                     </form>
-                    <div class="row">
-                        <div class="col-lg-auto">
-                            <div class="container signin">
-                                <br>
-                                <p>Har du allerede en bruger? <a href="login.jsp">login her</a>.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-
+        <div style="text-align: center">
+            <div class="col-lg-auto">
+                <div class="container signin">
+                    <br>
+                    <p>Har du allerede en bruger? <a href="login.jsp">login her</a>.</p>
+                </div>
+            </div>
+        </div>
 
     </jsp:body>
 </t:pagetemplate>

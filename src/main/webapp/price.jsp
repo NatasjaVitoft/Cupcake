@@ -21,8 +21,8 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Bund</th>
-                <th>Pris</th>
+                <th style="width: 70%">Bund</th>
+                <th style="width: 30%">Pris</th>
             </tr>
             </thead>
             <tr>
@@ -69,8 +69,8 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Top</th>
-                <th>Pris</th>
+                <th style="width: 70%">Top</th>
+                <th style="width: 30%">Pris</th>
             </tr>
             </thead >
             <tr>
@@ -92,7 +92,6 @@
         </table>
 
         <br>
-
 
     </jsp:body>
 

@@ -1,12 +1,9 @@
 package dat.backend.model.entities;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Order {
-
-
 
     private int id;
     private String username;
@@ -16,10 +13,16 @@ public class Order {
     public Order(String username, int total_price) {
         this.username = username;
         this.total_price = total_price;
-        this.date = date;
     }
 
     public Order() {
+    }
+
+    public Order(int id, String username, Timestamp date, int total_price) {
+        this.username = username;
+        this.total_price = total_price;
+        this.date = date;
+        this.id = id;
     }
 
     public int getId() {

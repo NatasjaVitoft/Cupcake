@@ -20,15 +20,16 @@
                 <div class="row">
                     <div class="col-lg-8">
 
-
                         <h1>Shopping</h1>
+
                         <br>
                     </div>
                 </div>
                 <div class="row ">
-                    <div class="card" style="width: 50rem; background-color:grey">
+                    <div class="card" style="width: 50rem; background-color: #D3D3D3">
                         <div class="col-lg-8">
                             <form action="addtocart" method="post">
+                                <br>
                                 <select name="bottom" id="bottom">
                                     <option value="1">chokolade (5 kr)</option>
                                     <option value="2">vanilje (5 kr)</option>
@@ -56,12 +57,14 @@
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                 </select>
+
                                 <button name="addToCart">Add to cart</button>
+
                             </form>
                         </div>
 
 
-                        <h4> Antal linjer i kurven: ${requestScope.cartsize}</h4>
+                        <h4> <br> Antal linjer i kurven: ${requestScope.cartsize}</h4>
 
                         <h4>Indhold i kurv:</h4>
 
@@ -78,8 +81,8 @@
                         <br>
                         <form action="addorder" method="post">
                             <button name="addorder"> Betal</button>
-
                         </form>
+                        <br>
                     </div>
                 </div>
             </div>

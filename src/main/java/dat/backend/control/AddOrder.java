@@ -19,7 +19,6 @@ import java.sql.SQLException;
 public class AddOrder extends HttpServlet {
 
     ConnectionPool connectionPool;
-    Order orders;
 
     @Override
     public void init() throws ServletException {
@@ -47,6 +46,7 @@ public class AddOrder extends HttpServlet {
         order.setUsername(username);
         order.setTotal_price(price);
 
+
         try {
             OrderFacade.createOrder(username, price, connectionPool);
             User user = UserFacade.getUserByUsername(username, connectionPool);
@@ -59,11 +59,11 @@ public class AddOrder extends HttpServlet {
             session.setAttribute("order", order); // adding user object to session scope
             session.removeAttribute("cart");
             session.setAttribute("cart", shoppingCart);
-            request.getRequestDispatcher("WEB-INF/welcome.jsp").forward(request, response);
+            request.getRequestDispatcher("welcome.jsp").forward(request, response);
         } catch (DatabaseException | SQLException e) {
             e.printStackTrace();
             System.out.println("Something went wrong");
         }
-        response.sendRedirect("WEB-INF/welcome.jsp");
+        response.sendRedirect("welcome.jsp");
     }
 }
