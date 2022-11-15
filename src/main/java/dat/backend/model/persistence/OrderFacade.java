@@ -3,6 +3,7 @@ package dat.backend.model.persistence;
 import dat.backend.model.entities.Order;
 import dat.backend.model.exceptions.DatabaseException;
 
+import javax.servlet.http.HttpServletRequest;
 import java.sql.Timestamp;
 
 public class OrderFacade {
@@ -11,8 +12,8 @@ public class OrderFacade {
         return OrderMapper.createOrder(username, total_price, connectionPool);
     }
 
-    public static void readOrder(ConnectionPool connectionPool) throws DatabaseException{
-        OrderMapper.readOrder(connectionPool);
+    public static void readOrder(HttpServletRequest request, ConnectionPool connectionPool) throws DatabaseException{
+        OrderMapper.readOrder(request, connectionPool);
     }
 
     /*public static Order deleteOrder(int id, String username, ConnectionPool connectionPool) throws DatabaseException{
