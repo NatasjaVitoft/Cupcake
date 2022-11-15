@@ -3,19 +3,23 @@ package dat.backend.control;
 import dat.backend.model.config.ApplicationStart;
 import dat.backend.model.entities.Order;
 import dat.backend.model.entities.ShoppingCart;
+import dat.backend.model.entities.User;
 import dat.backend.model.exceptions.DatabaseException;
 import dat.backend.model.persistence.ConnectionPool;
 import dat.backend.model.persistence.OrderFacade;
+import dat.backend.model.persistence.UserFacade;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet(name = "addorder", value = "/addorder")
 public class AddOrder extends HttpServlet {
 
     ConnectionPool connectionPool;
+    Order orders;
 
     @Override
     public void init() throws ServletException {
@@ -40,18 +44,23 @@ public class AddOrder extends HttpServlet {
         Order order = new Order();
         ShoppingCart shoppingCart = new ShoppingCart();
 
-
         order.setUsername(username);
         order.setTotal_price(price);
 
         try {
             OrderFacade.createOrder(username, price, connectionPool);
+            User user = UserFacade.getUserByUsername(username, connectionPool);
+            int oldSaldo = user.getSaldo();
+            int newSaldo = oldSaldo - price;
+            if(oldSaldo>=price) {
+                UserFacade.update(username, newSaldo, connectionPool);
+            }
             session = request.getSession();
             session.setAttribute("order", order); // adding user object to session scope
             session.removeAttribute("cart");
             session.setAttribute("cart", shoppingCart);
             request.getRequestDispatcher("WEB-INF/welcome.jsp").forward(request, response);
-        } catch (DatabaseException e) {
+        } catch (DatabaseException | SQLException e) {
             e.printStackTrace();
             System.out.println("Something went wrong");
         }

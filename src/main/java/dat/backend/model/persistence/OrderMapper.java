@@ -51,7 +51,7 @@ public class OrderMapper {
     public static void readOrder(ConnectionPool connectionPool){
         List<String> orderList = new ArrayList<>();
 
-        String sql = "select * from order ";
+        String sql = "select * from orders ";
 
         try (Connection connection = connectionPool.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {

@@ -1,7 +1,6 @@
 package dat.backend.model.persistence;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-import dat.backend.model.entities.Order;
+
 import dat.backend.model.entities.Orderline;
 import dat.backend.model.exceptions.DatabaseException;
 

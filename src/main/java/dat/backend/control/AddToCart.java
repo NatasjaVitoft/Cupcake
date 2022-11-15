@@ -65,8 +65,6 @@ public class AddToCart extends HttpServlet {
         request.setAttribute("cartsize", cart.getNumberOfCupcakes());
         session.setAttribute("price", cart.getTotalPriceOfCupcakes());
 
-
-
         request.getRequestDispatcher("shopping.jsp").forward(request, response);
     }
 

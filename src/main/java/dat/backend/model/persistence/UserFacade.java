@@ -17,7 +17,7 @@ public class UserFacade
         return UserMapper.createUser(username, password, email, role, saldo, connectionPool);
     }
 
-    static User getUserByUsername(String username, ConnectionPool connectionPool) throws DatabaseException {
+    public static User getUserByUsername(String username, ConnectionPool connectionPool) throws DatabaseException {
         return UserMapper.getUserByUsername(username, connectionPool);
     }
 
