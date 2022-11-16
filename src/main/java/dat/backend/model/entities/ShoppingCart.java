@@ -8,11 +8,11 @@ public class ShoppingCart {
     private List<Cupcake> cupcakeList = new ArrayList<>();
     private int totalPrice;
 
-    public void add(Cupcake cupcake){
+    public void add(Cupcake cupcake) {
         cupcakeList.add(cupcake);
     }
 
-    public int getNumberOfCupcakes(){
+    public int getNumberOfCupcakes() {
         return cupcakeList.size();
     }
 
@@ -20,14 +20,11 @@ public class ShoppingCart {
         return cupcakeList;
     }
 
-    public int getTotalPriceOfCupcakes(){
-
+    public int getTotalPriceOfCupcakes() {
         return totalPrice;
-
-        }
-
-    public void setTotalPriceOfCupcakes(int totalPrice){
-        this.totalPrice = totalPrice;
     }
 
+    public void setTotalPriceOfCupcakes(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
 }

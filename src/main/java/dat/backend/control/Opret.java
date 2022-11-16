@@ -49,10 +49,14 @@ public class Opret extends HttpServlet {
         user.setSaldo(saldo);
 
         try {
-            userFacade.createUser(username, password, email, role, saldo, connectionPool);
-            session = request.getSession();
-            session.setAttribute("user", user); // adding user object to session scope
-            request.getRequestDispatcher("welcome.jsp").forward(request, response);
+            if(UserFacade.getUserByUsername(username, connectionPool)!=null) {
+                System.out.println("Already taken");
+            } else {
+                userFacade.createUser(username, password, email, role, saldo, connectionPool);
+                session = request.getSession();
+                session.setAttribute("user", user); // adding user object to session scope
+                request.getRequestDispatcher("welcome.jsp").forward(request, response);
+            }
         } catch (DatabaseException e) {
             e.printStackTrace();
         }

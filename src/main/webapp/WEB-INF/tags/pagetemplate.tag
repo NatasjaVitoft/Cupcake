@@ -73,16 +73,22 @@
     <hr/>
     <div class="row mt-4">
         <div class="col">
+            <div style="text-align: left">
             Nørgaardsvej 30<br/>
             2800 Lyngby
+            </div>
         </div>
         <div class="col">
+            <div style="text-align: center">
             Olster Cupcakes <br>
             <p>&copy; 2012 Cphbusiness</p>
+            </div>
         </div>
         <div class="col">
+            <div style="text-align: right">
             Datamatikkeruddannelsen<br/>
             2.semester efterår 2022
+            </div>
         </div>
     </div>
 

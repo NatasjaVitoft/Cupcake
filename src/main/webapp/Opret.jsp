@@ -23,8 +23,7 @@
                 <div class="col-lg-2">
                     <form action="Opret" method="post">
                         <h1>Opret</h1>
-                        <h4>Udfyld felterne:</h4>
-                        <br>
+                        <h5>Udfyld felterne:</h5>
 
                         <div class="row">
                             <div class="col-lg-auto">
@@ -34,7 +33,6 @@
                             </div>
                         </div>
 
-                        <br>
 
                         <div class="row">
                             <div class="col-lg-auto">
@@ -44,8 +42,6 @@
                             </div>
                         </div>
 
-                        <br>
-
                         <div class="row">
                             <div class="col-lg-auto">
                                 <label for="email"></label>
@@ -53,17 +49,12 @@
                             </div>
                         </div>
 
-                        <br>
-
-
                         <div class="row">
                             <div class="col-lg-auto">
                                 <label for="role"></label>
                                 <input type="text" placeholder="Enter role" name="role" id="role" required>
                             </div>
                         </div>
-
-                        <br>
 
                         <div class="row">
                             <div class="col-lg-auto">
@@ -74,6 +65,7 @@
 
                         <br>
                         <br>
+
                         <div class="row">
                             <div class="col-lg-auto">
                                 <button style="background-color: black; color: whitesmoke" type="submit" class="registerbtn">Opret</button>

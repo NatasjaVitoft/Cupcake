@@ -55,10 +55,12 @@ public class AddOrder extends HttpServlet {
             if(oldSaldo>=price) {
                 UserFacade.update(username, newSaldo, connectionPool);
             }
+
             session = request.getSession();
             session.setAttribute("order", order);
             session.removeAttribute("cart");
             session.setAttribute("cart", shoppingCart);
+
             request.getRequestDispatcher("welcome.jsp").forward(request, response);
         } catch (DatabaseException | SQLException e) {
             e.printStackTrace();

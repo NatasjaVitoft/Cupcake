@@ -21,8 +21,8 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th style="width: 70%">Bund</th>
-                <th style="width: 30%">Pris</th>
+                <th style="width: 90%">Bund</th>
+                <th style="width: 10%">Pris</th>
             </tr>
             </thead>
             <tr>
@@ -69,8 +69,8 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th style="width: 70%">Top</th>
-                <th style="width: 30%">Pris</th>
+                <th style="width: 90%">Top</th>
+                <th style="width: 10%">Pris</th>
             </tr>
             </thead >
             <tr>

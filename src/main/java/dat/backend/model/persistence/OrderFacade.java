@@ -16,10 +16,6 @@ public class OrderFacade {
         OrderMapper.readOrder(request, connectionPool);
     }
 
-    /*public static Order deleteOrder(int id, String username, ConnectionPool connectionPool) throws DatabaseException{
-        return OrderMapper.deleteOrder(id, username, connectionPool);
-    }*/
-
     public static Order updateOrder(int id, String username, ConnectionPool connectionPool) throws DatabaseException{
         return OrderMapper.updateOrder(id, username, connectionPool);
     }

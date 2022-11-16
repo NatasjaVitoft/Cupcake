@@ -3,7 +3,6 @@ package dat.backend.model.persistence;
 import dat.backend.model.entities.Bottom;
 import dat.backend.model.entities.Top;
 
-import java.util.List;
 
 public class CupcakeFacade {
 
