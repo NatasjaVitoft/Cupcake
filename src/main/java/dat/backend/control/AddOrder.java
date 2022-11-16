@@ -56,7 +56,7 @@ public class AddOrder extends HttpServlet {
                 UserFacade.update(username, newSaldo, connectionPool);
             }
             session = request.getSession();
-            session.setAttribute("order", order); // adding user object to session scope
+            session.setAttribute("order", order);
             session.removeAttribute("cart");
             session.setAttribute("cart", shoppingCart);
             request.getRequestDispatcher("welcome.jsp").forward(request, response);

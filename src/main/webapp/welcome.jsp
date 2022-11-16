@@ -5,11 +5,11 @@
 
 <t:pagetemplate>
     <jsp:attribute name="header">
-         Velkommen til Olsters
+         Velkommen til Olskers
     </jsp:attribute>
 
     <jsp:attribute name="footer">
-        Velkommen til Olsters
+        Velkommen til Olskers
     </jsp:attribute>
 
     <jsp:body>

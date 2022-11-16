@@ -5,11 +5,11 @@
 
 <t:pagetemplate>
     <jsp:attribute name="header">
-         Olster cupcake
+         Olsker cupcake
     </jsp:attribute>
 
     <jsp:attribute name="footer">
-        Olster cupcake
+        Olsker cupcake
     </jsp:attribute>
 
     <jsp:body>

@@ -1,0 +1,31 @@
+@startuml
+Title Cupcake
+
+State Login.jsp
+State AdminLogin.jsp
+State Opret.jsp
+State AdminPage.jsp
+
+State index.jsp
+State Welcome.jsp
+State Shopping.jsp
+State Price.jsp
+
+[*] -> index.jsp
+index.jsp --> Login.jsp
+Login.jsp --> AdminLogin.jsp
+Login.jsp --> Welcome.jsp : Login som bruger
+AdminLogin.jsp --> AdminPage.jsp : Login som admin
+AdminPage.jsp --> Welcome.jsp
+AdminPage.jsp --> Price.jsp
+Login.jsp --> Opret.jsp : Opret
+Opret.jsp --> Welcome.jsp : Bruger bliver oprettet og sendt videre
+
+Welcome.jsp --> Shopping.jsp : Bestille cupcake hvis man er logget ind som en user
+Shopping.jsp --> Welcome.jsp : Sendt videre efter bestilling
+
+Welcome.jsp --> Price.jsp : Priser
+Welcome.jsp --> Shopping.jsp : Kurv
+Welcome.jsp --> index.jsp : Logud
+
+@enduml

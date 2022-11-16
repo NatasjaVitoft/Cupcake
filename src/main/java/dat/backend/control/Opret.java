@@ -52,7 +52,7 @@ public class Opret extends HttpServlet {
             userFacade.createUser(username, password, email, role, saldo, connectionPool);
             session = request.getSession();
             session.setAttribute("user", user); // adding user object to session scope
-            request.getRequestDispatcher("WEB-INF/welcome.jsp").forward(request, response);
+            request.getRequestDispatcher("welcome.jsp").forward(request, response);
         } catch (DatabaseException e) {
             e.printStackTrace();
         }
